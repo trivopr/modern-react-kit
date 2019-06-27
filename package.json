@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
@@ -16,16 +17,14 @@
     "react-scripts": "3.0.1",
     "redux": "^4.0.1",
     "redux-form": "^8.2.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "react-scripts start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -41,8 +40,15 @@
   },
   "devDependencies": {
     "@babel/preset-stage-3": "^7.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.14.2",
     "postcss-loader": "^3.0.0",
     "postcss-normalize": "^7.0.1",
+    "prettier": "^1.18.2",
     "react-app-rewire-postcss": "^3.0.2",
     "react-app-rewired": "^2.1.3"
   }

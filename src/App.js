@@ -7,7 +7,7 @@ import Helmet from "react-helmet";
 // import { ThemeProvider } from "./components/Themeing";
 import Routes from "./routes";
 import { renderRoutes } from "react-router-config";
-import rootReducer  from "./reducers";
+import rootReducer  from "./duckStore";
 import Navigation from "./components/header/Navigation";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

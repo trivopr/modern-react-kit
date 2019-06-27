@@ -1,4 +1,3 @@
-
 import Loadable from 'react-loadable';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -14,9 +13,12 @@ const ContactLoadable = Loadable({
   loader: () => import('../pages/contact'),
   loading: LoadingSpinner
 });
+const PostsLandingLoadable = Loadable({
+  loader: () => import('../pages/posts-landing'),
+  loading: LoadingSpinner
+});
 
-const Routes = [
-  {
+const Routes = [{
     path: "/",
     exact: true,
     component: HomeLoadable
@@ -29,7 +31,10 @@ const Routes = [
     path: "/contact",
     component: ContactLoadable,
   },
+  {
+    path: "/posts-landing",
+    component: PostsLandingLoadable,
+  },
 ];
 
 export default Routes;
-
