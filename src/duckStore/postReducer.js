@@ -1,4 +1,4 @@
-import PostApis from "../api/PostApis";
+import PostApis from '../api/PostApis';
 
 const FETCH_SINGLE_POST = 'FETCH_SINGLE_POST';
 const FETCH_ALL_POST = 'FETCH_ALL_POST';
@@ -7,39 +7,39 @@ const UPDATE_POST = 'UPDATE_POST';
 const DELETE_POST = 'DELETE_POST';
 const SELECTED_POST = 'SELECTED_POST';
 
-export const getPostsSuccess = (payload) => {
-    return {
-        type: FETCH_ALL_POST,
-        payload
-    }
-}
+export const getPostsSuccess = payload => {
+  return {
+    type: FETCH_ALL_POST,
+    payload,
+  };
+};
 
 export function getPosts() {
-    return (dispatch) => {
-        PostApis.getPosts().then(data => {
-            dispatch(getPostsSuccess(data));
-        }).catch(err => console.log(err));
-    };
+  return dispatch => {
+    PostApis.getPosts()
+      .then(data => {
+        dispatch(getPostsSuccess(data));
+      })
+      .catch(err => console.log(err));
+  };
 }
-
 
 const initialstate = {
-    posts: [],
-    selectedPostIds: []
-}
-
+  posts: [],
+  selectedPostIds: [],
+};
 
 const Posts = (state = initialstate, action) => {
-    switch (action.type) {
-        case 'FETCH_ALL_POST':
-            return { ...state, posts: action.payload };
+  switch (action.type) {
+    case 'FETCH_ALL_POST':
+      return { ...state, posts: action.payload };
 
-        case 'ADD_POST':
-            return { ...state };
+    case 'ADD_POST':
+      return { ...state };
 
-        default:
-            return state
-    }
-}
+    default:
+      return state;
+  }
+};
 
 export default Posts;

@@ -11,28 +11,29 @@ const HomeLoadable = Loadable({
 });
 const ContactLoadable = Loadable({
   loader: () => import('../pages/contact'),
-  loading: LoadingSpinner
+  loading: LoadingSpinner,
 });
 const PostsLandingLoadable = Loadable({
   loader: () => import('../pages/posts-landing'),
-  loading: LoadingSpinner
+  loading: LoadingSpinner,
 });
 
-const Routes = [{
-    path: "/",
+const Routes = [
+  {
+    path: '/',
     exact: true,
-    component: HomeLoadable
+    component: HomeLoadable,
   },
   {
-    path: "/about",
+    path: '/about',
     component: AboutLoadable,
   },
   {
-    path: "/contact",
+    path: '/contact',
     component: ContactLoadable,
   },
   {
-    path: "/posts-landing",
+    path: '/posts-landing',
     component: PostsLandingLoadable,
   },
 ];

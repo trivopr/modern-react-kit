@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { getPosts } from "../../duckStore/postReducer";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getPosts } from '../../duckStore/postReducer';
 
 const PostLanding = props => {
   const [posts, setPosts] = useState([]);
@@ -26,7 +26,7 @@ const PostLanding = props => {
 
 const mapStateToProps = state => {
   return {
-    posts: state.posts
+    posts: state.posts,
   };
 };
 

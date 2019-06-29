@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import SingleAbout from "../../components/SigleAbout";
-import LoadingSpinner from "../../components/LoadingSpinner";
+import React, { Component } from 'react';
+import SingleAbout from '../../components/SigleAbout';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 class About extends Component {
   render() {
     const a = 4;
-    console.log("xin" + "chao" + "ban");
-    console.error("hihi");
+    console.log('xin' + 'chao' + 'ban');
+    console.error('hihi');
 
     return (
       <div>

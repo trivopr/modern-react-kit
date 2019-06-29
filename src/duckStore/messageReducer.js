@@ -1,29 +1,31 @@
-export const HIDE_MESSAGE = "HIDE_MESSAGE";
-export const SET_MESSAGE = "SET_MESSAGE";
-export const RESET_MESSAGE = "RESET_MESSAGE";
+export const HIDE_MESSAGE = 'HIDE_MESSAGE';
+export const SET_MESSAGE = 'SET_MESSAGE';
+export const RESET_MESSAGE = 'RESET_MESSAGE';
 
 const initialState = {
-  message: "",
+  message: '',
   show: false,
-  type: ""
+  type: '',
 };
 
-const messageReducer = (state = initialState, {
-  payload,
-  type
-}) => {
+const messageReducer = (state = initialState, { payload, type }) => {
   switch (type) {
     case RESET_MESSAGE:
       return {
-        ...state, message: "", type: ""
+        ...state,
+        message: '',
+        type: '',
       };
     case HIDE_MESSAGE:
       return {
-        ...state, show: false
+        ...state,
+        show: false,
       };
     case SET_MESSAGE:
       return {
-        message: payload.message, show: true, type: payload.type
+        message: payload.message,
+        show: true,
+        type: payload.type,
       };
     default:
       return state;

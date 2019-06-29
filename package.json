@@ -25,8 +25,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint '**/*.js' --write"
+    "lint": "eslint \"./src/**/*.js\"",
+    "lint:fix": "prettier-eslint \"./src/**/*.js\" --write"
   },
   "lint-staged": {
     "*.js": [

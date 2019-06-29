@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // eslint-disable-next-line no-unused-vars
 const SingleAbout = props => {

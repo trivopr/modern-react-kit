@@ -1,7 +1,7 @@
-import { connect } from "react-redux";
-import React from "react";
-import { toggleTodo } from "../../duckStore/todoReducer";
-import Todo from "./Todo";
+import { connect } from 'react-redux';
+import React from 'react';
+import { toggleTodo } from '../../duckStore/todoReducer';
+import Todo from './Todo';
 
 const Todos = ({ todos, toggleTodo }) => (
   <ul>
@@ -12,11 +12,11 @@ const Todos = ({ todos, toggleTodo }) => (
 );
 
 const mapStateToProps = state => ({
-  todos: []
+  todos: [],
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+  toggleTodo: id => dispatch(toggleTodo(id)),
 });
 
 export default connect(
