@@ -4,8 +4,9 @@ import LoadingSpinner from "../../components/LoadingSpinner";
 
 class About extends Component {
   render() {
-    let a = 4;
+    const a = 4;
     console.log("xin" + "chao" + "ban");
+    console.error("hihi");
 
     return (
       <div>

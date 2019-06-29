@@ -17,9 +17,9 @@ const PostLanding = props => {
 
   return (
     <div className="container-fluid">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste fugit voluptate voluptatum,
-      iusto similique maiores deleniti error asperiores aliquid, minima quo exercitationem eligendi
-      hic. Aspernatur deserunt earum quidem tempore modi!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste fugit voluptate voluptatum, iusto similique maiores
+      deleniti error asperiores aliquid, minima quo exercitationem eligendi hic. Aspernatur deserunt earum quidem
+      tempore modi!
     </div>
   );
 };
