@@ -1,7 +1,8 @@
-import Posts from '../mock/posts';
+import { get, post, put, deleteCall } from './configApi';
 
 export default class PostApis {
-  static getPosts = () => {
-    return Promise.all(Posts);
-  };
+  static async getPosts() {
+    const result = await get('https://jsonplaceholder.typicode.com/posts');
+    return result.data;
+  }
 }

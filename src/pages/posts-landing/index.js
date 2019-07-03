@@ -6,9 +6,7 @@ const PostLanding = props => {
   const [posts, setPosts] = useState([]);
 
   const handleSetPosts = () => {
-    // setPosts(data);
     props.getPosts();
-    console.log(props.posts);
   };
 
   useEffect(() => {

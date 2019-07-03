@@ -25,14 +25,14 @@ export function getPosts() {
 }
 
 const initialstate = {
-  posts: [],
+  postsList: [],
   selectedPostIds: [],
 };
 
 const Posts = (state = initialstate, action) => {
   switch (action.type) {
     case 'FETCH_ALL_POST':
-      return { ...state, posts: action.payload };
+      return { ...state, postsList: action.payload };
 
     case 'ADD_POST':
       return { ...state };
