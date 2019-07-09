@@ -1,30 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { isEmpty } from 'lodash';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { getPosts } from '../../duckStore/postReducer';
+import SinglePost from '../../components/SinglePost';
 
 const PostLanding = props => {
-  const [posts, setPosts] = useState([]);
+  const [postsList, setPosts] = useState([]);
 
   const handleSetPosts = () => {
-    props.getPosts();
+    const newPost = props.getPosts();
+    setPosts(newPost);
   };
 
   useEffect(() => {
     handleSetPosts();
   }, []);
 
+  const renderPosts = () => {
+    const { posts } = props;
+    const data = posts.map(item => <SinglePost post={item} key={item.id} />);
+    return <div className="list-group">{data}</div>;
+  };
+
   return (
     <div className="container-fluid">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste fugit voluptate voluptatum, iusto similique maiores
-      deleniti error asperiores aliquid, minima quo exercitationem eligendi hic. Aspernatur deserunt earum quidem
-      tempore modi!
+      <h2>
+        Add More <FontAwesomeIcon icon={faPlus} />
+      </h2>
+      {!isEmpty(props.posts) && renderPosts()}
     </div>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    posts: state.posts,
+    posts: state.Posts.postsList,
   };
 };
 

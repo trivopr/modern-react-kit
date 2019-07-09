@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import messageReducer from './messageReducer';
-import posts from './postReducer';
+import Posts from './postReducer';
+import SelectedPosts from './selectedPostsReducer';
 
 const rootReducer = combineReducers({
   // ...your other reducers here
@@ -9,7 +10,8 @@ const rootReducer = combineReducers({
   // for custom keys look up the docs for 'getFormState'
   form: formReducer,
   messages: messageReducer,
-  posts,
+  Posts,
+  selectedPosts: SelectedPosts,
 });
 
 export default rootReducer;

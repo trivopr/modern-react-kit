@@ -10,11 +10,11 @@ const SELECTED_POST = 'SELECTED_POST';
 export const getPostsSuccess = payload => {
   return {
     type: FETCH_ALL_POST,
-    payload,
+    data: payload,
   };
 };
 
-export function getPosts() {
+export const getPosts = () => {
   return dispatch => {
     PostApis.getPosts()
       .then(data => {
@@ -22,23 +22,22 @@ export function getPosts() {
       })
       .catch(err => console.log(err));
   };
-}
-
-const initialstate = {
-  postsList: [],
-  selectedPostIds: [],
 };
 
-const Posts = (state = initialstate, action) => {
-  switch (action.type) {
-    case 'FETCH_ALL_POST':
-      return { ...state, postsList: action.payload };
+const initialState = {
+  postsList: [],
+};
 
-    case 'ADD_POST':
+const Posts = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_ALL_POST:
+      return { ...state, postsList: action.data };
+
+    case ADD_POST:
       return { ...state };
 
     default:
-      return state;
+      return { ...state };
   }
 };
 
