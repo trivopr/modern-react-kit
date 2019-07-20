@@ -12,7 +12,7 @@ export const validate = values => {
   }
   if (!values.age) {
     errors.age = 'Required';
-  } else if (isNaN(Number(values.age))) {
+  } else if (Number(values.age)) {
     errors.age = 'Must be a number';
   } else if (Number(values.age) < 18) {
     errors.age = 'Sorry, you must be at least 18 years old';
@@ -26,3 +26,5 @@ export const validate = values => {
   }
   return errors;
 };
+
+export default validate;

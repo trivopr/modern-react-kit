@@ -1,0 +1,9 @@
+.list-group-single-post {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
