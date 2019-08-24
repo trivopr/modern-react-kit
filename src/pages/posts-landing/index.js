@@ -5,7 +5,7 @@ import { isEmpty, values } from 'lodash';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { getPosts, deleteSinglePost } from '../../duckStore/postReducer';
-import { addSelectedPost } from '../../duckStore/selectedPostsReducer';
+import { handleUpdateSelectedPost } from '../../duckStore/selectedPostsReducer';
 import SinglePost from '../../components/SinglePost';
 import SelectedPosts from '../../components/SelectedPosts';
 
@@ -22,7 +22,7 @@ const PostLanding = props => {
   }, []);
 
   const handleSelectedPost = id => {
-    props.addSelectedPost(id);
+    props.handleUpdateSelectedPost(id);
   };
 
   const handleEditPost = id => {
@@ -51,8 +51,9 @@ const PostLanding = props => {
       <h4>Create Post</h4>
       <hr />
       <h4>Selected Post</h4>
-      <SelectedPosts postList={props.selectedPosts} />
+      <SelectedPosts />
       <hr />
+      <h4>Post List</h4>
       {!isEmpty(props.posts) && renderPosts()}
     </div>
   );
@@ -67,7 +68,7 @@ const PostLanding = props => {
 
 PostLanding.propTypes = {
   getPosts: PropTypes.func,
-  addSelectedPost: PropTypes.func,
+  handleUpdateSelectedPost: PropTypes.func,
   deleteSinglePost: PropTypes.func,
   posts: PropTypes.object,
   selectedPosts: PropTypes.array,
@@ -77,7 +78,7 @@ PostLanding.defaultProps = {
   posts: {},
   selectedPosts: [],
   getPosts: () => {},
-  addSelectedPost: () => {},
+  handleUpdateSelectedPost: () => {},
   deleteSinglePost: () => {},
 };
 
@@ -90,5 +91,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getPosts, addSelectedPost, deleteSinglePost }
+  { getPosts, handleUpdateSelectedPost, deleteSinglePost }
 )(PostLanding);

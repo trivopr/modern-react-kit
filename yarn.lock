@@ -8242,7 +8242,13 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
-reselect@^4.0.0:
+reselect-tools@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/reselect-tools/-/reselect-tools-0.0.7.tgz#bff19df422ebebd1a7c322262db94a554f6b44ed"
+  dependencies:
+    reselect "4.0.0"
+
+reselect@4.0.0, reselect@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
 
